@@ -1,0 +1,9 @@
+
+MoleWhaxxor Game.
+Copyright (C) Magnus Löf Sweden - 2015-02-12.
+All rights reserved unless for school purposes.
+
+Music is copyrighted to their respective owners
+under creative commons attribution 3.0.
+
+Images: mole.png and mole_restart.png in the img directory is copyright public domain.

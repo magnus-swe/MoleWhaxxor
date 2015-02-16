@@ -1,0 +1,3 @@
+
+Images: mole.png and mole_restart.png are the same original mole.png image.
+Copyright is to its creators.

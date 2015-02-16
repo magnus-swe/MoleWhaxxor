@@ -1,0 +1,108 @@
+/**
+ * Import base style
+ */
+@import "../../common/base.less";
+
+/**
+ * Here comes specific style for a certain test program.
+ */
+
+
+/* Game width and height */
+@g-width:1160px;
+@g-height:600px;
+
+/* Set flash width, height and game background image */
+#flash {
+
+    width:@g-width;
+    height:@g-height;
+
+    background-image: url("img/background.png");
+    background-size: 100% auto;
+    background-repeat: repeat;
+    background-position: center top;
+}
+
+/* Set width and height for the mole table */
+#moletable {
+
+    /* Set width and height for the moletable */
+    width:100%;
+    height:85%;
+    border:0px;
+    /* border:3px solid black; */
+}
+
+.moletd {
+
+    /* Table row width */
+    width:33.3%;
+    border:0px;
+    /* border: 2px solid black; */
+}
+
+.moletr {
+
+    /* Table row height */
+    height:33.3%;
+    border:0px;
+}
+
+/* Set width, height and margins for class center
+   to center images and buttons in table cells */
+.center {
+
+    /* Center images in the cells */
+    margin-top:50px;
+    margin-left:140px;
+}
+
+/* Set width, height and margins for class resetbutton
+   to center the button in the cell.
+   Can not have 2 buttons with the same classname
+   or the table rows and cols will be enlarged */
+.resetbutton {
+
+    /* Center images in the cells */
+    margin-top:40px;
+    margin-left:140px;
+}
+
+/* The game score class */
+.scoretd {
+    width:10%;
+    border:0px;
+}
+
+/* The status class */
+.statustd {
+    width:60%;
+    border:0px;
+}
+
+/* The info class */
+.infotd {
+    width:30%;
+    border:0px;
+}
+
+/* The status class */
+.statusandscoretr {
+    border:0px;
+}
+
+/* Hide media controller */
+.clickSound {
+    display: none !important;
+}
+
+/* Hide media controller */
+.gameMusic {
+    display: none !important;
+}
+
+/* Hide media controller */
+.endGameMusic {
+    display: none !important;
+}
