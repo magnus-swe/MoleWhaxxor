@@ -4,6 +4,15 @@
  * All rights reserved unless for school purposes.
  */
 
+/* Mole popup speed - Increase this value to increase initial speed of the game.
+ * Values could be:
+ *   0 for kids aged 3-9
+ *   100 for senior citizens
+ *   1000 for people aged 10-55
+ */
+var molePopupSpeed = 1000;
+
+
 /* Randomiserar och returnerar ett tal mellan min och max */
 var newRandom = function random(min, max)
 {
@@ -23,8 +32,6 @@ function blinkID(elem)
 var numMolesWhacked = 0;
 /* Keep score for mole misses */
 var numMolesMissed = 0;
-/* Mole popup speed */
-var molePopupSpeed = 0;
 
 /**
  * Removes an old mole and adds a new one at a randomized location after a few seconds.
@@ -36,7 +43,8 @@ var placeRandomMole = function($id)
     var i = 0, j = 0, mole,
         randCol = 0, randRow = 0,
         randTimeout = 0,
-        whackTimeout = 3000; /* The player has 3 seconds to whack a mole */
+        /* The player has 1 second to whack a mole initially, minus molePopupSpeed */
+        whackTimeout = 1000;
 
     /* Hide the mole */
     $($id).hide();
@@ -106,8 +114,9 @@ var placeRandomMole = function($id)
             numMolesWhacked++;
             $('#score').html('Score: ' + numMolesWhacked);
 
-            /* Make the game go faster (faster popups and timeouts) */
-            molePopupSpeed += 100;
+            /* Make the game go faster (faster popups and timeouts) if the speed is less then then 3000 */
+            if( molePopupSpeed < 3000 )
+                molePopupSpeed += 300;
         }
         else
         {
@@ -148,7 +157,7 @@ var placeRandomMole = function($id)
                 blinkID('#status');
             }
 
-            /* Add a new randomly positioned mole after randTimout +whackTimout + 1 seconds */
+            /* Add a new randomly positioned mole after randTimout + whackTimout + 1 seconds minus molePopupSpeed */
             setTimeout(function()
             {
                 placeRandomMole(mole);
